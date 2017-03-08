@@ -2,7 +2,7 @@
 
 # Introduction to TypeScript
 
-![TypeScript Logo](https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png =300x)
+![TypeScript Logo](https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png){:height="300px" width="300px"}
 
 ## Introduction
 
