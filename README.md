@@ -12,7 +12,7 @@ An introduction to yet another 'script' to add to your arsenal.
 
 By the end of this lesson, students should be able to:
 
-- Explain the difference between ES6 and TypeScript
+- Explain the relationship between ES6 and TypeScript
 - Understand what type definitions are and why they are necessary
 - Read and write TypeScript code that employs typing
 - Use classes and interfaces to make their code more readable and maintainable
@@ -27,9 +27,15 @@ TypeScript is an open-sourced programming language developed and maintained by M
 
 This phrase is just a fancy way to say that TypeScript includes all of the types, semantics and functionality of JavaScript while adding a few bells and whistles of its own.
 
-<img src="https://cdn-images-1.medium.com/max/609/1*8lKzkDJVWuVbqumysxMRYw.png" style="width: 300px; height: 300px;">
+![TypeScript superset of JavaScript](http://alexander.holbreich.org/content/images/2016/01/typescript-es6-es5.png)
 
+So why bother with TypeScript? It turns out that some of those extra bells and whistles are extremely useful! A few new features TypeScript brings to the table are:
 
+- Optional Typing
+- Interfaces
+- Decorators
+
+All three of these features will be important to us as we dive into Angular 2, so let's learn them!
 
 
 
