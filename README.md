@@ -2,7 +2,7 @@
 
 # Introduction to TypeScript
 
-![TypeScript Logo](https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png){:height="300px" width="300px"}
+![TypeScript Logo](https://cdn-images-1.medium.com/max/622/1*grk7btEn0OJEQRKgG2Qs2A.png)
 
 ## Introduction
 
@@ -21,4 +21,13 @@ By the end of this lesson, students should be able to:
 
 ### What is TypeScript?
 
-TypeScript is an open-sourced programming language developed and maintained by Microsoft. It is a superset of JavaScript, meaning that **any existing valid JavaScript program is also a valid TypeScript program.** TypeScript transcompiles to JavaScript
+TypeScript is an open-sourced programming language developed and maintained by Microsoft. It is a superset of JavaScript, meaning that **any existing valid JavaScript program is also a valid TypeScript program.** TypeScript transcompiles to JavaScript, so **it can be run in both browsers and serverside.**
+
+### "TS as a superset of JS"
+
+This phrase is just a fancy way to say that TypeScript includes all of the types, semantics and functionality of JavaScript while adding a few bells and whistles of its own.
+
+![TypeScript superset of JavaScript](https://cdn-images-1.medium.com/max/609/1*8lKzkDJVWuVbqumysxMRYw.png)
+
+
+
