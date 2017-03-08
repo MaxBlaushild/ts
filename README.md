@@ -27,7 +27,9 @@ TypeScript is an open-sourced programming language developed and maintained by M
 
 This phrase is just a fancy way to say that TypeScript includes all of the types, semantics and functionality of JavaScript while adding a few bells and whistles of its own.
 
-![TypeScript superset of JavaScript](https://cdn-images-1.medium.com/max/609/1*8lKzkDJVWuVbqumysxMRYw.png)
+<img src="https://cdn-images-1.medium.com/max/609/1*8lKzkDJVWuVbqumysxMRYw.png" style="width: 300px; height: 300px;">
+
+
 
 
 
