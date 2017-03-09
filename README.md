@@ -107,7 +107,7 @@ sayPointsScored(pointsScored);
 
  BAM. Our compiler yells at us, and doesn't produce our JavaScript file. It's saving us from making mistakes. If we remove the type annotation from the argument, compile again, and run the JavaScript script with node, we get Lebron James scoring a very ugly point total.
 
- ### Classes
+### Classes
 
  Classes are the main tool for organization in OOP. You guys touched on classes back in rubyland, and classes already exist in ES6, but TypeScript grants us a few more useful keywords when working with them.
 
@@ -172,7 +172,7 @@ class Bunny {
 }
 ```
 
- ### Interfaces
+### Interfaces
 
 Now that we have the basics of typing in TypeScript down, we can really get cooking.
 
