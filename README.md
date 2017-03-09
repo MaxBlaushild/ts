@@ -72,3 +72,38 @@ tsc hello.ts
 
 ### Type Annotations
 
+Now that we've got the basics out of the way, we can really start cooking with TypeScript. 
+
+TypeScript is a static, weakly-typed. It is staticly typed because **we can declare the types of our variables and properties which are enforced at compile time**, and it is weakly typed because **we can also choose not to.** What does this mean?
+
+Let's take a look at **pointProclaimer.ts:**
+
+```typescript
+function sayPointsScored(points: number): void {
+	let lebronJamesMutiplier = 1000;
+	let pointsScored = points * lebronJamesMutiplier;
+	let proclamation = `Lebron James scored ${pointsScored} points!`;
+	console.log(proclamation);
+}
+
+let pointsScored = 9000;
+
+sayPointsScored(pointsScored);
+```
+
+With this colon syntax, we are telling both the compiler and our fellow coders exactly what type our variables are, and more importantly, what type of argument our function expects. When we run this code through our compiler, we get:
+
+```javascript
+function sayPointsScored(points) {
+    var proclamation = "Lebron James scored " + points + " points!";
+    console.log(proclamation);
+}
+var pointsScored = 9000;
+sayPointsScored(pointsScored);
+```
+
+ . . . the same exact same thing minus the type annotations. What the hell?! Why even bother? Let's go back and change the value of pointsScored to 'a billion' and see what happens.
+
+ BAM. Our compiler yells at us, and doesn't produce our JavaScript file. It's saving us from making mistakes. If we remove the type annotation from the argument, compile again, and run the JavaScript script with node, we get Lebron James scoring a very ugly point total.
+
+
