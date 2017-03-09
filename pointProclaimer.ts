@@ -1,4 +1,4 @@
-function sayPointsScored(points: number): void {
+function sayPointsScored(points): void {
 	let lebronJamesMutiplier = 1000;
 	let pointsScored = points * lebronJamesMutiplier;
 	let proclamation = `Lebron James scored ${pointsScored} points!`;

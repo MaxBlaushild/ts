@@ -32,11 +32,11 @@ So why bother with TypeScript? It turns out that some of those extra bells and w
 
 - Type Annotations
 
+- Classes
+
 - Interfaces
 
-- Decorators
-
-All three of these features will be important to us as we dive into Angular 2, so let's learn them!
+All four of these features will be important to us as we dive into Angular 2, so let's learn them!
 
 ## Getting started
 
@@ -72,8 +72,6 @@ tsc hello.ts
 
 ### Type Annotations
 
-Now that we've got the basics out of the way, we can really start cooking with TypeScript. 
-
 TypeScript is a static, weakly-typed. It is staticly typed because **we can declare the types of our variables and properties which are enforced at compile time**, and it is weakly typed because **we can also choose not to.** What does this mean?
 
 Let's take a look at **pointProclaimer.ts:**
@@ -95,15 +93,181 @@ With this colon syntax, we are telling both the compiler and our fellow coders e
 
 ```javascript
 function sayPointsScored(points) {
-    var proclamation = "Lebron James scored " + points + " points!";
+    var lebronJamesMutiplier = 1000;
+    var pointsScored = points * lebronJamesMutiplier;
+    var proclamation = "Lebron James scored " + pointsScored + " points!";
     console.log(proclamation);
 }
 var pointsScored = 9000;
 sayPointsScored(pointsScored);
+
 ```
 
  . . . the same exact same thing minus the type annotations. What the hell?! Why even bother? Let's go back and change the value of pointsScored to 'a billion' and see what happens.
 
  BAM. Our compiler yells at us, and doesn't produce our JavaScript file. It's saving us from making mistakes. If we remove the type annotation from the argument, compile again, and run the JavaScript script with node, we get Lebron James scoring a very ugly point total.
+
+ ### Classes
+
+ Classes are the main tool for organization in OOP. You guys touched on classes back in rubyland, and classes already exist in ES6, but TypeScript grants us a few more useful keywords when working with them.
+
+ **Let's code together.**
+
+ Please open the empty **animals.ts** file. We're going to craft some animals in a moment here. Let's start with a bunny:
+
+ ```typescript
+class Bunny {
+	public name: string;
+	public isAGoodBoy: boolean;
+	public numberOfPets: number;
+	private pregnant: boolean;
+	constructor(name: string, pregnant: boolean) {
+		this.name = name;
+		this.pregnant = pregnant;
+		this.isAGoodBoy = false;
+		this.numberOfPets = 0;
+	}
+}
+
+const fluffy = new Bunny('Fluffy', true);
+```
+
+Here we have a class with two properties and a constructor. The constructor works the same as the "initialize" function we used in Ruby when creating a new class instance. We type both the arguments, then assign them to the correspondingly named properties of the class. Notice the keywords before each property of the class.
+
+**public** means that this property is exposed to code that exists **outside of the scope of our class or instance**.
+
+**private** means that this property is only available to code that exists within the scope of our class or instance.
+
+We don't want weirdos to be able alter the bunny's pregnancy (not gonna touch that one), but we DO want other code to check whether or not our bunny is pregnant. One way to accomplish this is with an **instance method.** 
+
+```typescript
+isPregnant() {
+	return this.pregnant;
+}
+```
+
+We had to cut the much more explicit version of this using getters and setters, but we encourage you to [take a look](https://www.typescriptlang.org/docs/handbook/classes.html).
+
+Finally, you can add **static properties** to your classes in TypeScript. These are properties that exist **on the class itself**. In Javascript, since classes are glorified constructor functions, and functions are objects, you would do something like this: 
+
+```javascript
+Bunny.numberOfLegs = 4
+```
+
+You can do the same thing with TypeScript, since TypeScript is a superset of JavaScript, but the semantic way is this:
+
+```typescript
+class Bunny {
+	static numberOfLegs = 4;
+	public name: string;
+	public isAGoodBoy: boolean;
+	public numberOfPets: number;
+	private pregnant: boolean;
+	constructor(name: string, pregnant: boolean) {
+		this.name = name;
+		this.pregnant = pregnant;
+		this.isAGoodBoy = false;
+		this.numberOfPets = 0;
+	}
+}
+```
+
+ ### Interfaces
+
+Now that we have the basics of typing in TypeScript down, we can really get cooking.
+
+An interface is a type commonly found in programming languages. It allows us **to define a data contract that our peers must adhere by when interacting with our code.**
+
+Let's look at **pettable.ts** for some examples.
+
+At the top of the file, you should see an interface and function:
+
+```typescript
+interface Pettable {
+	numberOfPets: number;
+	isAGoodBoy: boolean;
+}
+
+function pet(animal: Pettable) {
+	animal.numberOfPets++;
+	animal.isAGoodBoy = true;
+}
+```
+
+We define the contract that it takes for an object to be pettable, then, with our typing, say that an object must be pettable to be petted.
+
+Now lets make some animals to pet.
+
+In the **animals.ts** file, let's create an elephant class: 
+
+```typescript
+class Elephant {
+	public name: string;
+	public isAGoodBoy: boolean;
+	public numberOfPets: number;
+	public peanuts: Array<Peanut>
+	constructor(name: string) {
+		this.name = name;
+		this.isAGoodBoy = false;
+		this.numberOfPets = 0;
+		this.peanuts = [new Peanut()];
+	}
+
+	toot() {
+		console.log('TOOT TOOT!');
+	}
+}
+
+class Peanut {
+	public numberOfNuts: number;
+	constructor() {
+		this.numberOfNuts = 2
+	}
+}
+```
+
+This class is a lot meater than our bunny class.
+
+Next, let's add a non-classed stray animal to our menagerie:
+
+```typescript
+const stray = {
+	numberOfPets: 0,
+	isAGoodBoy: true,
+	legs: 3
+};
+```
+
+Now we can export our two classes and our object so we can use them in our **pettable.ts** file:
+
+```typescript
+export { Bunny, Elephant, stray }; 
+```
+ . . . and import them at the top of **pettable.ts**.
+
+ ```typescript
+ import { Bunny, Elephant, stray } from "./animals";
+ ```
+
+Since we have all of our classes in the right place now, we can instantiate some instances:
+
+```typescript
+const fluffy = new Bunny('fluffy', false)
+const dumbo = new Elephant('dumbo');
+```
+
+. . . and attempt to pet all three of our animal objects:
+
+```typescript
+pet(fluffy);
+pet(stray);
+pet(dumbo);
+```
+
+SUCCESS!
+
+Even though our three animals all have different classes, or don't have any class at all, they can still all be petted because they have the right properties to conform to the Pettable protocol.
+
+
 
 
