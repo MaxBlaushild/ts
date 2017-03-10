@@ -2,6 +2,7 @@ class Warrior {
   private wearingUnderwear: boolean;
   public weapon: Weapon;
   public health: number;
+  private fightId: number;
   publics fullName: string;
   constructor(fullName: number) {
     this.fullName = fullName;
@@ -10,7 +11,7 @@ class Warrior {
   }
 
   fight(target: Warrior) {
-    setTimeout(this.weapon.secondsBetweenSwings, () => {
+    this.fightId = setTimeout(this.weapon.secondsBetweenSwings, () => {
       this.weapon.swing(target);
     });
   }
