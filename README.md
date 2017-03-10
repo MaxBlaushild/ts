@@ -146,7 +146,7 @@ isPregnant() {
 }
 ```
 
-We had to cut the much more explicit version of this using getters and setters, but we encourage you to [take a look](https://www.typescriptlang.org/docs/handbook/classes.html).
+We had to cut the much more explicit version of this using getters and setters, but we encourage you to [take a look at the documentation](https://www.typescriptlang.org/docs/handbook/classes.html).
 
 Finally, you can add **static properties** to your classes in TypeScript. These are properties that exist **on the class itself**. In Javascript, since classes are glorified constructor functions, and functions are objects, you would do something like this: 
 
