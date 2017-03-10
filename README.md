@@ -36,7 +36,7 @@ So why bother with TypeScript? It turns out that some of those extra bells and w
 
 - Interfaces
 
-All four of these features will be important to us as we dive into Angular 2, so let's learn them!
+All three of these features will be important to us as we dive into Angular 2, so let's learn them!
 
 ## Getting started
 
@@ -46,7 +46,7 @@ First off, we need to globally install the TypeScript compiler. We can do this t
 npm install typescript -g
 ```
 
-What did we just install? This program will read our TypeScript, interpret it, and turn it into JavaScript. Pretty neat, right? Since our finished product is JavaScript, it can be run in browsers.
+What did we just install? This program will read our TypeScript, interpret it, and turn it into JavaScript (ES5). Pretty neat, right? Since our finished product is JavaScript, it can be run in browsers.
 
 ![Transpiling](https://i1.wp.com/www.mithunvp.com/wp-content/uploads/2016/02/transpiling.png)
 
@@ -270,7 +270,7 @@ Even though our three animals all have different classes, or don't have any clas
 
 ### Lab: Make it compile
 
-**battle.ts** is very broken. Using what we just learned, and the compiler feedback, fix the file until it compiles cleanly;
+**battle.ts** is very broken. Using what we just learned, and the compiler feedback, fix the file until it compiles cleanly. Bonus points for making Lebron James win the battle.
 
 ## Additional Resources
 
@@ -279,7 +279,7 @@ Even though our three animals all have different classes, or don't have any clas
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
+2.  All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
 
 
