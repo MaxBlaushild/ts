@@ -56,7 +56,7 @@ Take a look at **hello.ts.** You should see this:
 
 ```typescript
 function sayHello() {
-	console.log('Hello! This syntax seems familiar . . . .');
+  console.log('Hello! This syntax seems familiar . . . .');
 }
 
 sayHello();
@@ -78,10 +78,10 @@ Let's take a look at **pointProclaimer.ts:**
 
 ```typescript
 function sayPointsScored(points: number): void {
-	let lebronJamesMutiplier = 1000;
-	let pointsScored = points * lebronJamesMutiplier;
-	let proclamation = `Lebron James scored ${pointsScored} points!`;
-	console.log(proclamation);
+  let lebronJamesMutiplier = 1000;
+  let pointsScored = points * lebronJamesMutiplier;
+  let proclamation = `Lebron James scored ${pointsScored} points!`;
+  console.log(proclamation);
 }
 
 let pointsScored = 9000;
@@ -117,16 +117,16 @@ sayPointsScored(pointsScored);
 
  ```typescript
 class Bunny {
-	public name: string;
-	public isAGoodBoy: boolean;
-	public numberOfPets: number;
-	private pregnant: boolean;
-	constructor(name: string, pregnant: boolean) {
-		this.name = name;
-		this.pregnant = pregnant;
-		this.isAGoodBoy = false;
-		this.numberOfPets = 0;
-	}
+  public name: string;
+  public isAGoodBoy: boolean;
+  public numberOfPets: number;
+  private pregnant: boolean;
+  constructor(name: string, pregnant: boolean) {
+    this.name = name;
+    this.pregnant = pregnant;
+    this.isAGoodBoy = false;
+    this.numberOfPets = 0;
+  }
 }
 
 const fluffy = new Bunny('Fluffy', true);
@@ -142,7 +142,7 @@ We don't want weirdos to be able alter the bunny's pregnancy (not gonna touch th
 
 ```typescript
 isPregnant() {
-	return this.pregnant;
+  return this.pregnant;
 }
 ```
 
@@ -158,17 +158,17 @@ You can do the same thing with TypeScript, since TypeScript is a superset of Jav
 
 ```typescript
 class Bunny {
-	static numberOfLegs = 4;
-	public name: string;
-	public isAGoodBoy: boolean;
-	public numberOfPets: number;
-	private pregnant: boolean;
-	constructor(name: string, pregnant: boolean) {
-		this.name = name;
-		this.pregnant = pregnant;
-		this.isAGoodBoy = false;
-		this.numberOfPets = 0;
-	}
+  static numberOfLegs = 4;
+  public name: string;
+  public isAGoodBoy: boolean;
+  public numberOfPets: number;
+  private pregnant: boolean;
+  constructor(name: string, pregnant: boolean) {
+    this.name = name;
+    this.pregnant = pregnant;
+    this.isAGoodBoy = false;
+    this.numberOfPets = 0;
+  }
 }
 ```
 
@@ -184,13 +184,13 @@ At the top of the file, you should see an interface and function:
 
 ```typescript
 interface Pettable {
-	numberOfPets: number;
-	isAGoodBoy: boolean;
+  numberOfPets: number;
+  isAGoodBoy: boolean;
 }
 
 function pet(animal: Pettable) {
-	animal.numberOfPets++;
-	animal.isAGoodBoy = true;
+  animal.numberOfPets++;
+  animal.isAGoodBoy = true;
 }
 ```
 
@@ -202,27 +202,27 @@ In the **animals.ts** file, let's create an elephant class:
 
 ```typescript
 class Elephant {
-	public name: string;
-	public isAGoodBoy: boolean;
-	public numberOfPets: number;
-	public peanuts: Array<Peanut>
-	constructor(name: string) {
-		this.name = name;
-		this.isAGoodBoy = false;
-		this.numberOfPets = 0;
-		this.peanuts = [new Peanut()];
-	}
+  public name: string;
+  public isAGoodBoy: boolean;
+  public numberOfPets: number;
+  public peanuts: Array<Peanut>
+  constructor(name: string) {
+    this.name = name;
+    this.isAGoodBoy = false;
+    this.numberOfPets = 0;
+    this.peanuts = [new Peanut()];
+  }
 
-	toot() {
-		console.log('TOOT TOOT!');
-	}
+  toot() {
+    console.log('TOOT TOOT!');
+  }
 }
 
 class Peanut {
-	public numberOfNuts: number;
-	constructor() {
-		this.numberOfNuts = 2
-	}
+  public numberOfNuts: number;
+  constructor() {
+    this.numberOfNuts = 2
+  }
 }
 ```
 
@@ -232,9 +232,9 @@ Next, let's add a non-classed stray animal to our menagerie:
 
 ```typescript
 const stray = {
-	numberOfPets: 0,
-	isAGoodBoy: true,
-	legs: 3
+  numberOfPets: 0,
+  isAGoodBoy: true,
+  legs: 3
 };
 ```
 
@@ -267,6 +267,20 @@ pet(dumbo);
 SUCCESS!
 
 Even though our three animals all have different classes, or don't have any class at all, they can still all be petted because they have the right properties to conform to the Pettable protocol.
+
+### Lab: Make it compile
+
+**battle.ts** is very broken. Using what we just learned, and the compiler feedback, fix the file until it compiles cleanly;
+
+## Additional Resources
+
+-   [TypeScript Documentation](https://www.typescriptlang.org/docs/tutorial.html)
+
+## [License](LICENSE)
+
+1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
+1.  All software code is licensed under GNU GPLv3. For commercial use or
+    alternative licensing, please contact legal@ga.co.
 
 
 
